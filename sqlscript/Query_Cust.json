@@ -2,7 +2,7 @@
 	"name": "Query_Cust",
 	"properties": {
 		"content": {
-			"query": "SELECT * from Customer",
+			"query": "SELECT * from Cust",
 			"metadata": {
 				"language": "sql"
 			},
