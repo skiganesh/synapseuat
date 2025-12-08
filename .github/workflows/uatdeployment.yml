@@ -28,6 +28,4 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           resourceGroupName: "dftest_rg"
           template: "dfuatws/TemplateForWorkspace.json"
-          parameters: dfuatws/TemplateParametersForWorkspace.json
-          overrideParameters: >
-            -workspaceName dfprodws
+          parameters: dfuatws/TemplateParametersForWorkspace.json workspaceName=dfprodws
