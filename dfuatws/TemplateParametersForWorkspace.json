@@ -3,7 +3,7 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"workspaceName": {
-			"value": "dfuatws"
+			"value": "dfprodws"
 		},
 		"dfuatws-WorkspaceDefaultSqlServer_connectionString": {
 			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:dfuatws.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
