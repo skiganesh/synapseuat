@@ -1,0 +1,32 @@
+name: Deploy Synapse to Prod
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - workspace_publish
+
+jobs:
+  deploy:
+    name: Deploy ARM templates to Prod
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CLIENT_SECRET }}
+          
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        with:
+          ref: workspace_publish
+
+      - name: Deploy Synapse ARM Template
+        uses: azure/arm-deploy@v2
+        with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          resourceGroupName: "dftest_rg"
+          template: "dftest-ws/TemplateForWorkspace.json"
+          parameters: dftest-ws/TemplateParametersForWorkspace.json SqlServer_Onprem_password=${{ secrets.SQL_SERVER_PASSWORD }}
+          deploymentName: "synapseDeployment"
