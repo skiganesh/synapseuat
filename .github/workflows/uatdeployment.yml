@@ -12,21 +12,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-        with:
-          ref: workspace_publish
-
       - name: Azure Login
         uses: azure/login@v2
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.AZURE_CLIENT_SECRET }}
+          
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        with:
+          ref: workspace_publish
 
       - name: Deploy Synapse to PROD
         uses: azure/arm-deploy@v2
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          resourceGroupName: dftest_rg
-          template: ./dfuatws/TemplateForWorkspace.json
-          parameters: ./dfuatws/TemplateParametersForWorkspace.json
-          deploymentMode: Incremental
+          resourceGroupName: "dftest_rg"
+          template: "dfuatws/TemplateForWorkspace.json"
+          parameters: dfuatws/TemplateParametersForWorkspace.json 
