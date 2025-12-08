@@ -29,3 +29,4 @@ jobs:
           resourceGroupName: "dftest_rg"
           template: "dfuatws/TemplateForWorkspace.json"
           parameters: dfuatws/TemplateParametersForWorkspace.json workspaceName=dfprodws
+          DeleteArtifactsNotInTemplate: false
