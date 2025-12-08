@@ -22,7 +22,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('workspaceName'), '/dfuatws-WorkspaceDefaultSqlServer')]",
+			"name": "[concat(parameters('workspaceName'), '/WorkspaceDefaultSqlServer')]",
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
@@ -46,7 +46,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/dfuatws-WorkspaceDefaultStorage')]",
+			"name": "[concat(parameters('workspaceName'), '/WorkspaceDefaultStorage')]",
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
