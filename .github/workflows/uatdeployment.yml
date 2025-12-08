@@ -27,6 +27,7 @@ jobs:
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           resourceGroupName: "dftest_rg"
+          WorkspaceName: 'dfprodws'
           template: "dfuatws/TemplateForWorkspace.json"
           parameters: dfuatws/TemplateParametersForWorkspace.json
           deploymentName: "synapseUATDeployment"
