@@ -22,7 +22,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('workspaceName'), '/WorkspaceDefaultSqlServer')]",
+			"name": "[concat(parameters('workspaceName'), '/dfuatws-WorkspaceDefaultSqlServer')]",
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
@@ -46,7 +46,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/WorkspaceDefaultStorage')]",
+			"name": "[concat(parameters('workspaceName'), '/dfuatws-WorkspaceDefaultStorage')]",
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
@@ -99,7 +99,7 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"content": {
-					"query": "SELECT * from Cust",
+					"query": "SELECT * from Customer",
 					"metadata": {
 						"language": "sql"
 					},
