@@ -3,10 +3,10 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"workspaceName": {
-			"value": "dfprodws"
+			"value": "dfuatws"
 		},
 		"dfuatws-WorkspaceDefaultSqlServer_connectionString": {
-			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:dfprodws-ondemand.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:dfuatws.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
 		"dfuatws-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://dftestsa1910.dfs.core.windows.net"
