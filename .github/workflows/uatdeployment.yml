@@ -23,7 +23,7 @@ jobs:
           ref: workspace_publish
 
       - name: Deploy Synapse to PROD
-        uses: azure/synapse-workspace-deployment@v1.2.0
+        uses: azure/arm-deploy@v2
         with:
           operation: 'deploy'
           TargetWorkspaceName: 'dfprodws'                         # NOT WorkspaceName
