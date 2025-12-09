@@ -46,10 +46,7 @@
           }
         },
         "annotations": []
-      },
-      "dependsOn": [
-        "[resourceId('Microsoft.Synapse/workspaces', parameters('workspaceName'))]"
-      ]
+      }
     }
   ],
   "outputs": {
