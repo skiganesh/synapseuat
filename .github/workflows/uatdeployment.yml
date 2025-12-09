@@ -27,5 +27,4 @@ jobs:
           resourceGroupName: "dftest_rg"
           template: "dfuatws/Custom_ARM_Template.json"
           # Pass parameters inline so there's no ambiguity which workspace is used:
-          parameters: workspaceName=dfprodws sqlScriptName=Query_Cust sqlQuery='SELECT * from Customer'
-          DeleteArtifactsNotInTemplate: false
+          parameters: workspaceName=dfprodw
