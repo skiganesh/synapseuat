@@ -27,4 +27,4 @@ jobs:
           resourceGroupName: "dftest_rg"
           template: "dfuatws/Custom_ARM_Template.json"
           # Pass parameters inline so there's no ambiguity which workspace is used:
-          parameters: workspaceName=dfprodw
+          parameters: workspaceName=dfprodws
