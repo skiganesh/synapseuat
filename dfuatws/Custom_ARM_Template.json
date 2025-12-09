@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "workspaceName": {
+      "type": "string",
+      "defaultValue": "dfuatws",
+      "metadata": {
+        "description": "Name of the Synapse workspace that will contain the SQL script."
+      }
+    },
+    "sqlScriptName": {
+      "type": "string",
+      "defaultValue": "Query_Cust",
+      "metadata": {
+        "description": "Name of the Synapse SQL script resource to create."
+      }
+    },
+    "sqlQuery": {
+      "type": "string",
+      "defaultValue": "SELECT * from Customer",
+      "metadata": {
+        "description": "The SQL text for the script."
+      }
+    },
+    "apiVersion": {
+      "type": "string",
+      "defaultValue": "2021-06-01-preview",
+      "metadata": {
+        "description": "API version for the Microsoft.Synapse/workspaces/sqlScripts resource."
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Synapse/workspaces/sqlScripts",
+      "apiVersion": "[parameters('apiVersion')]",
+      "name": "[concat(parameters('workspaceName'), '/', parameters('sqlScriptName'))]",
+      "properties": {
+        "description": "SQL script deployed by ARM template",
+        "content": {
+          "query": "[parameters('sqlQuery')]",
+          "metadata": {
+            "language": "SQL",
+            "connectionName": "Built-in"
+          }
+        },
+        "annotations": []
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Synapse/workspaces', parameters('workspaceName'))]"
+      ]
+    }
+  ],
+  "outputs": {
+    "sqlScriptResourceId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Synapse/workspaces/sqlScripts', parameters('workspaceName'), parameters('sqlScriptName'))]"
+    }
+  }
+}
