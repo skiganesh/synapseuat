@@ -1,0 +1,6 @@
+{
+  "workspaceName": { "value": "dfuatws" },
+  "sqlScriptName": { "value": "Query_Cust" },
+  "sqlQuery": { "value": "SELECT * from Customer" },
+  "apiVersion": { "value": "2021-06-01-preview" }
+}
