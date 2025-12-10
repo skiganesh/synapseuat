@@ -23,7 +23,7 @@ jobs:
       - name: Deploy Synapse to PROD
         uses: azure/arm-deploy@v2
 
-      - uses: Azure/synapse-workspace-deployment@v1
+      - uses: Azure/synapse-workspace-deployment
         with:
           TargetWorkspaceName: 'dfprodws'
           TemplateFile: 'dfuatws/Custom_ARM_Template.json'
